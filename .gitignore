@@ -9,6 +9,7 @@
 
 # production
 /dist
+/build
 /modules/*
 
 # misc
