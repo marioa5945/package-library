@@ -31,7 +31,9 @@ export default class PageHome extends React.PureComponent<_router, ifsState> {
     return (
       <div className={homeStyle.home}>
         <main>
-          <img src="/img/logo.png" />
+          <a href={'/'}>
+            <img src="/img/logo.png" />
+          </a>
           <ul>
             <li onClick={() => history.push('/react-md')}>react-md</li>
           </ul>

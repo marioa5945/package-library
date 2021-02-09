@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactMd from '@src/components/react-md';
+import readme from '@src/components/react-md/README.md';
 import demo from './demo.md';
+import style from './style.scss';
 
-const PageRouter: React.FC = () => {
+const RenderReadme: React.FC = () => {
   return (
-    <div style={{ padding: '0 10px', background: '#1e1e1e' }}>
-      <ReactMd markdown={demo} />
+    <div className={style.readme}>
+      <ReactMd markdown={readme} />
     </div>
   );
 };
 
-export default PageRouter;
+export default RenderReadme;
