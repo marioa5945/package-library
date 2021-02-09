@@ -16,12 +16,12 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'template/index.html',
+      publicPath: '/react-components/',
     }),
   ],
   output: {
     filename: 'js/[name].bundle.js',
     path: resolve('.', 'build'),
-    publicPath: '/',
   },
   module: {
     rules: [
