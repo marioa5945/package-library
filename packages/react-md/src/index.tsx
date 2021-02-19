@@ -1,15 +1,12 @@
 import React from 'react';
 import darkStyle from './dark.scss';
 
-export interface ifsReactMdProps {
-  markdown: string;
-}
-
 /**
  * react markdown component
  * @param props
+ * @param {string}markdown
  */
-const ReactMd = (props: ifsReactMdProps): React.ReactElement => {
+const ReactMd = (props: { markdown: string }): React.ReactElement => {
   const toLink = (str: string): string => {
     let value = str;
     const arr = /\[(.+?)\]\((.+?)\)/.exec(str);
@@ -139,7 +136,9 @@ const ReactMd = (props: ifsReactMdProps): React.ReactElement => {
    */
   const toTs = (str: string): string => {
     let value = str;
-    if (preName === 'ts' || preName === 'js') {
+    if (preName === 'ts' || preName === 'js' || preName === 'tsx' || preName === 'jsx') {
+      value = tsRepace(/\{(\w+)\} /, value, darkStyle['type']);
+
       const keys: Array<{
         name: string;
         list: Array<string>;
@@ -173,6 +172,8 @@ const ReactMd = (props: ifsReactMdProps): React.ReactElement => {
 
       // key
       value = tsRepace(/ (\*) /, value, darkStyle['key']);
+      value = tsRepace(/[^>]([{])/, value, darkStyle['key']);
+      value = tsRepace(/([}])[^<]/, value, darkStyle['key']);
 
       // num
       value = tsRepace(/[( [](\d+)[ );,\]]/, value, darkStyle['num']);
@@ -200,6 +201,10 @@ const ReactMd = (props: ifsReactMdProps): React.ReactElement => {
       value = tsRepace(/{ (\w+) /, value, darkStyle['obj']);
       value = tsRepace(/\((\w+?) /, value, darkStyle['obj']);
       value = tsRepace(/ (\w+) /, value, darkStyle['obj']);
+      value = tsRepace(/ (\w+)=</, value, darkStyle['obj']);
+
+      // type
+      value = tsRepace(/&lt;(\w+) /, value, darkStyle['type']);
     }
 
     return value;
@@ -222,6 +227,8 @@ const ReactMd = (props: ifsReactMdProps): React.ReactElement => {
     const arr = props.markdown.split('\n');
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] !== '') {
+        arr[i] = arr[i].replace(/</g, '&lt;');
+
         arr[i] = toPre(arr[i]);
         arr[i] = toAnnotate(arr[i]);
         if (isPre && arr[i].indexOf(`class="${darkStyle.annotate}"`) === -1) {
@@ -262,8 +269,6 @@ const ReactMd = (props: ifsReactMdProps): React.ReactElement => {
 
     return value;
   };
-
-  console.log(darkStyle['css']);
 
   return <div className={darkStyle.markdown} dangerouslySetInnerHTML={{ __html: dataFormart() }} />;
 };

@@ -115,6 +115,9 @@
     }
     .string {
       color: #d98e73;
+      > span {
+        color: #d98e73 !important;
+      }
     }
     .num {
       color: #afcfa4;

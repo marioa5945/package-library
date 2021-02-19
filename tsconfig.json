@@ -24,9 +24,10 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@packages": ["./packages"]
     }
   },
   "files": ["./types/index.d.ts", "./types/other.d.ts"],
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "packages/**/*"]
 }

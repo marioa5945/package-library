@@ -10,7 +10,7 @@ export default {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       '@src': resolve('./src'),
-      '@components': resolve('./src/components'),
+      '@packages': resolve('./packages'),
     },
   },
   plugins: [

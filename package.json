@@ -1,21 +1,16 @@
 {
   "name": "react-components",
   "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "src/components/*"
-  ],
   "description": "Mario a's react components",
   "main": "./src/app.tsx",
   "scripts": {
     "start": "ts-node ./scripts/server.ts",
-    "build": "webpack --config ./scripts/webpack.pro.ts"
+    "build": "webpack --config ./scripts/webpack.pro.ts",
+    "react-md": "webpack --config ./scripts/webpack.react-md.ts"
   },
   "repository": "git@github.com:marioa5945/react-components.git",
   "keywords": [
-    "blog",
-    "react typescript rxjs",
-    "webpack5"
+    "react-components"
   ],
   "author": {
     "name": "mario a",
