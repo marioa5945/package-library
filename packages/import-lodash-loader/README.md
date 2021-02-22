@@ -1,4 +1,4 @@
-# react-md
+# import-lodash-loader
 
 Import lodash automatically of specific methods one by one
 
@@ -19,7 +19,7 @@ module: {
       exclude: /node-modules/,
       use: [
         'babel-loader',
-        'import-lodash-loader',
+        '@marioa/import-lodash-loader',
       ],
     }
   ],
