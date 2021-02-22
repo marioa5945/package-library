@@ -5,7 +5,7 @@ react markdown component of render markdown file.
 ## Installation
 
 ```sh
-$ yarn add react-md
+$ yarn add @marioa/react-md
 ```
 
 ## Use

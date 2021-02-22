@@ -174,6 +174,7 @@ const ReactMd = (props: { markdown: string }): React.ReactElement => {
       value = tsRepace(/ (\*) /, value, darkStyle['key']);
       value = tsRepace(/[^>]([{])/, value, darkStyle['key']);
       value = tsRepace(/([}])[^<]/, value, darkStyle['key']);
+      value = tsRepace(/([}])$/, value, darkStyle['key']);
 
       // num
       value = tsRepace(/[( [](\d+)[ );,\]]/, value, darkStyle['num']);
@@ -202,6 +203,7 @@ const ReactMd = (props: { markdown: string }): React.ReactElement => {
       value = tsRepace(/\((\w+?) /, value, darkStyle['obj']);
       value = tsRepace(/ (\w+) /, value, darkStyle['obj']);
       value = tsRepace(/ (\w+)=</, value, darkStyle['obj']);
+      value = tsRepace(/^(\w+): /, value, darkStyle['obj']);
 
       // type
       value = tsRepace(/&lt;(\w+) /, value, darkStyle['type']);

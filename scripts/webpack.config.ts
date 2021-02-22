@@ -78,6 +78,5 @@ export default {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    _: 'lodash',
   },
 } as Configuration;

@@ -5,9 +5,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from './webpack.server';
 import open from 'open';
-import util from 'util';
 
-const exec = util.promisify(require('child_process').exec);
 const app = express();
 const compiler = webpack(webpackConfig);
 const config = tomlJson({ fileUrl: './config.toml' });
@@ -38,17 +36,8 @@ app.listen(port, function () {
   console.log(`starting at http://localhost:${port}`);
 });
 
-const execCmd = async (cmd: string) => {
-  const { stdout, stderr } = await exec(cmd);
-  console.log(stderr === '' ? stdout : stderr);
-};
-
 process.stdin.on('data', (data) => {
-  if (data.toString() === '\n') {
-    // press enter to update api json
-    console.log('api update...');
-    execCmd('yarn api');
-  } else if (data.toString() === '-o\n') {
+  if (data.toString() === '-o\n') {
     // open url to view it in the browser
     open(`http://localhost:${port}`);
   }

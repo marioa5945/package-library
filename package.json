@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node ./scripts/server.ts",
     "build": "webpack --config ./scripts/webpack.pro.ts",
-    "react-md": "webpack --config ./scripts/webpack.react-md.ts"
+    "build:com": "ts-node ./scripts/build-com.ts",
+    "test": "cd ./dist/import-lodash-loader/ && npm publish && cd ../../"
   },
   "repository": "git@github.com:marioa5945/react-components.git",
   "keywords": [
@@ -27,6 +28,7 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/runtime": "^7.12.1",
+    "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
@@ -63,10 +65,12 @@
     "postcss": "^8.2.4",
     "postcss-loader": "^5.0.0",
     "prettier": "2.1.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
     "toml-json": "^1.0.2",
+    "ts-declaration-webpack-plugin": "^1.2.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.0.3",
     "url-loader": "^4.1.1",

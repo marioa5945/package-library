@@ -1,29 +1,12 @@
 import React from 'react';
 import homeStyle from './style.scss';
 
-interface ifsState {
-  activeId: string;
-  directory: Array<ifsDirectory>;
-  markdown: string;
-}
-
-interface ifsDirectory {
-  id: string;
-  title: string;
-  date: string;
-  description: string;
-}
-
-export default class PageHome extends React.PureComponent<_router, ifsState> {
+export default class PageHome extends React.PureComponent<_router> {
   constructor(props: _router) {
     super(props);
-
-    this.state = {
-      activeId: '',
-      directory: [],
-      markdown: '',
-    };
   }
+
+  private nav = ['react-md', 'import-lodash-loader'];
 
   render(): React.ReactElement {
     const { history } = this.props;
@@ -35,7 +18,11 @@ export default class PageHome extends React.PureComponent<_router, ifsState> {
             <img src="/img/logo.png" />
           </a>
           <ul>
-            <li onClick={() => history.push('/react-md')}>react-md</li>
+            {this.nav.map((n: string) => (
+              <li key={n} onClick={() => history.push(`/${n}`)}>
+                {n}
+              </li>
+            ))}
           </ul>
         </main>
       </div>
