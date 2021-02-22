@@ -5,7 +5,7 @@ Import lodash automatically of specific methods one by one
 ## Installation
 
 ```sh
-$ yarn add @marioa/import-lodash-loader
+$ yarn add @marioa/import-lodash-loader --dev
 ```
 
 ## Use
