@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { Configuration } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
+import RcDeclarationWebpackPlugin from '../packages/rc-declaration-webpack-plugin';
 
 export default {
   mode: 'production',
@@ -16,6 +17,7 @@ export default {
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new RcDeclarationWebpackPlugin({ declarationDir: './dist/react-md/' }),
     new CopyPlugin({
       patterns: [
         {
@@ -25,10 +27,6 @@ export default {
         {
           from: './packages/react-md/package1.json',
           to: './package.json',
-        },
-        {
-          from: './packages/react-md/src/index.d.ts',
-          to: './index.d.ts',
         },
       ],
     }),

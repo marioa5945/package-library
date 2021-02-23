@@ -1,7 +1,7 @@
 import readline from 'readline';
 import util from 'util';
 const exec = util.promisify(require('child_process').exec);
-const choices = ['react-md', 'import-lodash-loader'].reverse();
+const choices = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin'].reverse();
 
 /**
  * Get defaut command
@@ -17,7 +17,11 @@ const cmdGet = (name: string, defaultTsc?: boolean): string => {
 /**
  * build command array
  */
-const buildCmdArr = ['webpack --config ./scripts/webpack.react-md.ts', cmdGet('import-lodash-loader', true)];
+const buildCmdArr = [
+  'webpack --config ./scripts/webpack.react-md.ts',
+  cmdGet('import-lodash-loader', true),
+  cmdGet('rc-declaration-webpack-plugin', true),
+];
 
 const publishCmdGet = (name: string) => {
   return `cd ./dist/${name}/ && npm publish --access public && cd ../../`;
