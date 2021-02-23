@@ -13,10 +13,11 @@ const RenderReadme: React.FC = () => {
 const DemoPage: React.FC = () => {
   const obj = {
     a: {
-      b: '1',
+      b: 'import-lodash-loader is ok',
     },
   };
 
+  // test
   console.log(_.get(obj, 'a.b'));
 
   return <RenderReadme />;

@@ -6,7 +6,7 @@ export default class PageHome extends React.PureComponent<_router> {
     super(props);
   }
 
-  private nav = ['react-md', 'import-lodash-loader'];
+  private nav = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin'];
 
   render(): React.ReactElement {
     const { history } = this.props;

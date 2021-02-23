@@ -7,6 +7,7 @@ const history = createHashHistory();
 import PageHome from './container/home/';
 import PageReactMd from './container/react-md/';
 import PageImportLodashLoader from './container/import-lodash-loader/';
+import RcDeclarationWebpackPlugin from './container/rc-declaration-webpack-plugin/';
 
 const PageRouter: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const PageRouter: React.FC = () => {
         <Route exact={true} path={'/'} component={PageHome} />
         <Route path={'/react-md'} component={PageReactMd} />
         <Route path={'/import-lodash-loader'} component={PageImportLodashLoader} />
+        <Route path={'/rc-declaration-webpack-plugin'} component={RcDeclarationWebpackPlugin} />
       </Switch>
     </Router>
   );
