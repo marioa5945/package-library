@@ -104,7 +104,12 @@ const execCmd = async (cmd: string) => {
   const { stdout, stderr } = await exec(cmd);
   console.log(stderr === '' ? stdout : stderr);
 
-  selectIsPublishPrint();
+  if (step === 3) {
+    console.log('\r\n===================== exit\r\n');
+    process.exit(0);
+  } else {
+    selectIsPublishPrint();
+  }
 };
 
 rl.on('line', () => {
@@ -117,7 +122,7 @@ rl.on('line', () => {
     selectBuildOrPublishPrint();
   } else if (step === 2) {
     console.log(`${choices[buildIndex]} is publish...`);
-    step--;
+    step++;
     execCmd(publishCmdGet(choices[buildIndex]));
   }
 }).on('close', () => {

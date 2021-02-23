@@ -6,9 +6,7 @@
   "scripts": {
     "start": "ts-node ./scripts/server.ts",
     "build": "webpack --config ./scripts/webpack.pro.ts",
-    "build:com": "ts-node ./scripts/build-com.ts",
-    "test": "webpack --config ./scripts/webpack.react-md.ts",
-    "d": "tsc --declaration --declarationDir ./dist --skipLibCheck --emitDeclarationOnly --esModuleInterop --jsx React ./types/index.d.ts  ./packages/react-md/src/index.tsx"
+    "com": "ts-node ./scripts/build-com.ts"
   },
   "repository": "git@github.com:marioa5945/react-components.git",
   "keywords": [

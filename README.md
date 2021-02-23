@@ -41,7 +41,7 @@ Your app is ready to be deployed!
 ### build or publish package
 
 ```
-$ npm run build:com
+$ npm run com
 ```
 
 ## License

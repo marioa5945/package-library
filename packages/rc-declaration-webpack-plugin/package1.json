@@ -1,6 +1,6 @@
 {
   "name": "@marioa/rc-declaration-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create react-commponent's declaration files",
   "main": "./index.js",
   "repository": "git@github.com:marioa5945/react-components.git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/marioa5945/react-components/issues"
   },
-  "homepage": "https://marioa5945.github.io/react-components"
+  "homepage": "https://marioa5945.github.io/react-components",
+  "peerDependencies": {
+    "webpack": ">=5"
+  }
 }
