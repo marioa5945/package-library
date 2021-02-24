@@ -1,6 +1,6 @@
 {
   "name": "server-print",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "Print and copy server url",
   "main": "./index.js",
   "repository": "git@github.com:marioa5945/react-components.git",

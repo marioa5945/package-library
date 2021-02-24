@@ -1,6 +1,5 @@
 import readline from 'readline';
 import util from 'util';
-import tomlJson from 'toml-json';
 const exec = util.promisify(require('child_process').exec);
 const choices = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin', 'server-print'].reverse();
 
@@ -11,7 +10,9 @@ const choices = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plu
  */
 const cmdGet = (name: string, defaultTsc?: boolean): string => {
   let cmd = `rimraf ./dist/${name}`;
-  cmd = defaultTsc ? cmd + ` && tsc --outDir ./dist/${name}/ --declaration --skipLibCheck ./packages/${name}/index.ts` : cmd;
+  cmd = defaultTsc
+    ? cmd + ` && tsc --outDir ./dist/${name}/ --declaration --skipLibCheck --allowSyntheticDefaultImports ./packages/${name}/index.ts`
+    : cmd;
   return cmd + `&& cp ./packages/${name}/package1.json ./dist/${name}/package.json && cp ./packages/${name}/README.md ./dist/${name}/README.md`;
 };
 
@@ -22,6 +23,7 @@ const buildCmdArr = [
   'webpack --config ./scripts/webpack.react-md.ts',
   cmdGet('import-lodash-loader', true),
   cmdGet('rc-declaration-webpack-plugin', true),
+  cmdGet('server-print', true),
 ];
 
 const publishCmdGet = (name: string) => {

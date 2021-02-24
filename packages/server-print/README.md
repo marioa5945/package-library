@@ -5,13 +5,13 @@ Print and copy server url
 ## Installation
 
 ```sh
-$ yarn add @marioa/server-print --dev
+$ yarn add server-print --dev
 ```
 
 ## Use
 
 ```ts
-import serverPrint from '@marioa/server-print';
+import serverPrint from 'server-print';
 
 serverPrint('8080');
 
