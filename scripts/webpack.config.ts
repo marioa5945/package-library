@@ -9,6 +9,7 @@ export default {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
+      '@/': resolve('./'),
       '@src': resolve('./src'),
       '@packages': resolve('./packages'),
     },
@@ -16,7 +17,7 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'template/index.html',
-      publicPath: '/react-components/',
+      publicPath: '/',
     }),
   ],
   output: {

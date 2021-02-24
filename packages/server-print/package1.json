@@ -1,11 +1,12 @@
 {
-  "name": "@marioa/react-md",
+  "name": "server-print",
   "version": "1.0.3",
-  "description": "react markdown",
+  "description": "Print and copy server url",
   "main": "./index.js",
   "repository": "git@github.com:marioa5945/react-components.git",
   "keywords": [
-    "react markdown"
+    "server print",
+    "node"
   ],
   "author": {
     "name": "mario a",
@@ -17,8 +18,9 @@
     "url": "https://github.com/marioa5945/react-components/issues"
   },
   "homepage": "https://marioa5945.github.io/react-components",
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+  "dependencies": {
+    "clipboardy": "^2.3.0",
+    "chalk": "^4.1.0",
+    "boxen": "^5.0.0"
   }
 }

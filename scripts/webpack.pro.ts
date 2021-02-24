@@ -2,6 +2,8 @@ import config from './webpack.config';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { resolve } from 'path';
+import { container } from 'webpack';
+const { ModuleFederationPlugin } = container;
 
 delete config.devtool;
 config.mode = 'production';
@@ -18,6 +20,13 @@ config.mode = 'production';
 });
 (config.plugins as any).push(new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }));
 (config.plugins as any).push(
+  new ModuleFederationPlugin({
+    name: 'app2',
+    filename: 'remoteEntry.js',
+    exposes: {
+      './Widget': './src/app',
+    },
+  }),
   new CopyPlugin({
     patterns: [
       {

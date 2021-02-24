@@ -1,7 +1,8 @@
 import readline from 'readline';
 import util from 'util';
+import tomlJson from 'toml-json';
 const exec = util.promisify(require('child_process').exec);
-const choices = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin'].reverse();
+const choices = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin', 'server-print'].reverse();
 
 /**
  * Get defaut command

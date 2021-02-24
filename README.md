@@ -1,6 +1,6 @@
 # react components
 
-a collection of react components
+a collection of packages
 
 ## Installation
 
