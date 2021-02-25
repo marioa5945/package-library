@@ -1,7 +1,7 @@
-import os from 'os';
+import os = require('os');
 const interfaces = os.networkInterfaces();
-import boxen from 'boxen';
-import chalk from 'chalk';
+import boxen = require('boxen');
+import chalk = require('chalk');
 import { write } from 'clipboardy';
 
 /**
