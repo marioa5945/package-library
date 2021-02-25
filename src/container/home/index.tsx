@@ -14,7 +14,7 @@ export default class PageHome extends React.PureComponent<_router> {
     return (
       <div className={homeStyle.home}>
         <main>
-          <a onClick={() => history.push(`/home`)}>
+          <a href={'/'}>
             <img src="/img/logo.png" />
           </a>
           <ul>
