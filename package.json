@@ -7,7 +7,7 @@
   "scripts": {
     "start": "ts-node ./scripts/node.server.ts",
     "build": "webpack --config ./scripts/webpack.pro.ts",
-    "com": "ts-node ./scripts/build-com.ts"
+    "com": "ts-node ./scripts/node.build-com.ts"
   },
   "repository": "git@github.com:marioa5945/package-library.git",
   "keywords": [

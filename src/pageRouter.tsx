@@ -12,12 +12,6 @@ import RcDeclarationWebpackPlugin from './container/rc-declaration-webpack-plugi
 import ServerPrint from './container/server-print/';
 
 const PageRouter: React.FC = () => {
-  history.listen((location) => {
-    if (location.pathname === '/home') {
-      window.location.href = '/home';
-    }
-    console.log(`You changed the page to: ${location.pathname}`);
-  });
   return (
     <Router history={history}>
       <Switch>

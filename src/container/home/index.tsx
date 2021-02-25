@@ -12,11 +12,11 @@ export default class PageHome extends React.PureComponent<_router> {
     const { history } = this.props;
 
     return (
-      <div className={homeStyle.home}>
+      <div className={homeStyle.homePage}>
         <main>
-          <a href={'/'}>
-            <img src="/img/logo.png" />
-          </a>
+          <span onClick={() => history.push('/home')}>
+            <img src="/home/img/logo.png" />
+          </span>
           <ul>
             {this.nav.map((n: string) => (
               <li key={n} onClick={() => history.push(`/demos/${n}`)}>

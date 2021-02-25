@@ -1,4 +1,4 @@
-.home {
+.homePage {
   color: #111;
   background-color: #eee;
   display: flex;
@@ -11,11 +11,19 @@
   height: 100%;
 
   main {
-    img {
-      width: 150px;
-      display: block;
-      margin: 15px auto;
-      border-radius: 50%;
+    > span {
+      cursor: pointer;
+
+      img {
+        width: 150px;
+        display: block;
+        margin: 15px auto;
+        border-radius: 50%;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
 
     li {

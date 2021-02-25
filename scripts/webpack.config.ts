@@ -1,6 +1,7 @@
 import { resolve } from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { Configuration } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   mode: 'development',
@@ -15,6 +16,9 @@ export default {
     },
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+    }),
     new HtmlWebpackPlugin({
       template: 'template/index.html',
       publicPath: '/',
@@ -29,7 +33,9 @@ export default {
       {
         test: /\.s(a|c)ss$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           {
             loader: 'css-loader',
             options: { modules: true, importLoaders: 2 },
