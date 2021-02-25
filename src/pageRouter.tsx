@@ -13,8 +13,8 @@ import ServerPrint from './container/server-print/';
 
 const PageRouter: React.FC = () => {
   history.listen((location) => {
-    if (location.pathname === '/') {
-      window.location.href = '/';
+    if (location.pathname === '/home') {
+      window.location.href = '/home';
     }
     console.log(`You changed the page to: ${location.pathname}`);
   });
