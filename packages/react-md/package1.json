@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "react markdown",
   "main": "./index.js",
-  "repository": "git@github.com:marioa5945/react-components.git",
+  "repository": "git@github.com:marioa5945/package-library.git",
   "keywords": [
     "react markdown"
   ],
@@ -14,9 +14,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marioa5945/react-components/issues"
+    "url": "https://github.com/marioa5945/package-library/issues"
   },
-  "homepage": "https://marioa5945.github.io/react-components",
+  "homepage": "https://github.com/marioa5945/package-library/tree/main/packages/react-md",
   "peerDependencies": {
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"

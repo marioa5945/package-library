@@ -9,7 +9,7 @@
     "build": "webpack --config ./scripts/webpack.pro.ts",
     "com": "ts-node ./scripts/build-com.ts"
   },
-  "repository": "git@github.com:marioa5945/react-components.git",
+  "repository": "git@github.com:marioa5945/package-library.git",
   "keywords": [
     "marioa",
     "packages",
@@ -25,9 +25,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marioa5945/react-components/issues"
+    "url": "https://github.com/marioa5945/package-library/issues"
   },
-  "homepage": "https://marioa5945.github.io/react-components",
+  "homepage": "https://marioa5945.github.io/home/#/demos",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
