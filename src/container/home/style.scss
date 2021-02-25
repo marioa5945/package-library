@@ -3,6 +3,7 @@
   background-color: #eee;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +15,7 @@
       width: 150px;
       display: block;
       margin: 15px auto;
-      animation: scaleout 2.5s ease-in-out forwards;
+      border-radius: 50%;
     }
 
     li {

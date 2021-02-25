@@ -1,18 +1,22 @@
 {
-  "name": "react-components",
+  "name": "package-library",
   "version": "1.0.0",
   "private": true,
-  "description": "Mario a's react components",
+  "description": "The library includes some packages and demos",
   "main": "./src/app.tsx",
   "scripts": {
-    "start": "ts-node ./scripts/server.ts",
+    "start": "ts-node ./scripts/node.server.ts",
     "build": "webpack --config ./scripts/webpack.pro.ts",
-    "com": "ts-node ./scripts/build-com.ts",
-    "test": "rimraf ./dist/server-print&& cp ./packages/server-print/package1.json ./dist/server-print/package.json && cp ./packages/server-print/README.md ./dist/server-print/README.md"
+    "com": "ts-node ./scripts/build-com.ts"
   },
   "repository": "git@github.com:marioa5945/react-components.git",
   "keywords": [
-    "react-components"
+    "marioa",
+    "packages",
+    "lib",
+    "react",
+    "webpack",
+    "node"
   ],
   "author": {
     "name": "mario a",

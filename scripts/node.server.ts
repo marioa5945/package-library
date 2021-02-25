@@ -12,15 +12,15 @@ const config = tomlJson({ fileUrl: './config.toml' });
 
 app.use(express.static('public')); // static
 
-app.get('*', function (req: any, res: unknown, next: any) {
-  if (!req.url.match('static') && !req.url.match('/__webpack_hmr') && !req.url.match('bundle.js')) {
-    req.url = '/';
-  }
-  if (req.url === '/react-components/js/main.bundle.js') {
-    req.url = '/js/main.bundle.js';
-  }
-  next();
-});
+// app.get('*', function (req: any, res: unknown, next: any) {
+//   if (!req.url.match('static') && !req.url.match('/__webpack_hmr') && !req.url.match('bundle.js')) {
+//     req.url = '/';
+//   }
+//   if (req.url === '/react-components/js/main.bundle.js') {
+//     req.url = '/js/main.bundle.js';
+//   }
+//   next();
+// });
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js configuration file as a base.
 app.use(

@@ -21,10 +21,10 @@ config.mode = 'production';
 (config.plugins as any).push(new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }));
 (config.plugins as any).push(
   new ModuleFederationPlugin({
-    name: 'app2',
-    filename: 'remoteEntry.js',
+    name: 'packageLib',
+    filename: 'js/remoteEntry.js',
     exposes: {
-      './Widget': './src/app',
+      './router': './src/app',
     },
   }),
   new CopyPlugin({
@@ -32,9 +32,6 @@ config.mode = 'production';
       {
         from: './public',
         to: './',
-        globOptions: {
-          ignore: ['**/.DS_Store'],
-        },
       },
     ],
   })
