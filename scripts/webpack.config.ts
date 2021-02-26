@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import toml from 'toml';
 
 export default {
   mode: 'development',
@@ -10,7 +11,7 @@ export default {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@/': resolve('./'),
+      '@base': resolve('./'),
       '@src': resolve('./src'),
       '@packages': resolve('./packages'),
     },
@@ -79,6 +80,13 @@ export default {
             },
           },
         ],
+      },
+      {
+        test: /\.toml/,
+        type: 'json',
+        parser: {
+          parse: toml.parse,
+        },
       },
     ],
   },

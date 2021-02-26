@@ -1,12 +1,13 @@
 import React from 'react';
 import homeStyle from './style.scss';
+import navObj from '@base/config.toml';
 
 export default class PageHome extends React.PureComponent<_router> {
   constructor(props: _router) {
     super(props);
   }
 
-  private nav = ['react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin', 'server-print'].reverse();
+  private nav = navObj.packages.list.reverse();
 
   render(): React.ReactElement {
     const { history } = this.props;

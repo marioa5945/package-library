@@ -1,2 +1,5 @@
 [server]
 port = "9002"
+
+[packages]
+list = [ 'react-md', 'import-lodash-loader', 'rc-declaration-webpack-plugin', 'server-print' ]

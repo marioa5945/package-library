@@ -4511,6 +4511,11 @@ toml-json@^1.1.0:
   resolved "https://registry.npm.taobao.org/toml-json/download/toml-json-1.1.0.tgz#ba7d5324d4f9d75afa8dcd6177587bd6506af424"
   integrity sha1-un1TJNT511r6jc1hd1h71lBq9CQ=
 
+toml@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/toml/download/toml-3.0.0.tgz#342160f1af1904ec9d204d03a5d61222d762c5ee"
+  integrity sha1-NCFg8a8ZBOydIE0DpdYSItdixe4=
+
 ts-declaration-webpack-plugin@^1.2.3:
   version "1.2.3"
   resolved "https://registry.npm.taobao.org/ts-declaration-webpack-plugin/download/ts-declaration-webpack-plugin-1.2.3.tgz#08af8e73ebece917431f45b0071dd4eeb96a9e41"

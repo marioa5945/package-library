@@ -23,7 +23,7 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
+      "@base/*": ["./*"],
       "@src/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@packages": ["./packages"]
