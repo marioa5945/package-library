@@ -10,11 +10,6 @@ const app = express();
 const compiler = webpack(webpackConfig);
 const config = tomlJson({ fileUrl: './config.toml' });
 
-app.get('*', function (req: any, res: unknown, next: any) {
-  req.url = req.url.replace(/^\/home\//, '/');
-  next();
-});
-
 app.use(express.static('public')); // static
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js configuration file as a base.

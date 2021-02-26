@@ -5,22 +5,22 @@ import './base.scss';
 
 const history = createHashHistory();
 
-import PageHome from './container/home/';
-import PageReactMd from './container/react-md/';
-import PageImportLodashLoader from './container/import-lodash-loader/';
-import RcDeclarationWebpackPlugin from './container/rc-declaration-webpack-plugin/';
-import ServerPrint from './container/server-print/';
+import HomePage from './container/home/';
+import ReactMdPage from './container/react-md/';
+import ImportLodashLoaderPage from './container/import-lodash-loader/';
+import RcDeclarationWebpackPluginPage from './container/rc-declaration-webpack-plugin/';
+import ServerPrintPage from './container/server-print/';
 
 const PageRouter: React.FC = () => {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact={true} path={'/'} component={PageHome} />
-        <Route exact={true} path={'/demos'} component={PageHome} />
-        <Route path={'/demos/react-md'} component={PageReactMd} />
-        <Route path={'/demos/import-lodash-loader'} component={PageImportLodashLoader} />
-        <Route path={'/demos/rc-declaration-webpack-plugin'} component={RcDeclarationWebpackPlugin} />
-        <Route path={'/demos/server-print'} component={ServerPrint} />
+        <Route exact={true} path={'/'} component={HomePage} />
+        <Route exact={true} path={'/demos'} component={HomePage} />
+        <Route path={'/demos/react-md'} component={ReactMdPage} />
+        <Route path={'/demos/import-lodash-loader'} component={ImportLodashLoaderPage} />
+        <Route path={'/demos/rc-declaration-webpack-plugin'} component={RcDeclarationWebpackPluginPage} />
+        <Route path={'/demos/server-print'} component={ServerPrintPage} />
       </Switch>
     </Router>
   );

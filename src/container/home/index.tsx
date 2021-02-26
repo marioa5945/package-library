@@ -14,8 +14,8 @@ export default class PageHome extends React.PureComponent<_router> {
     return (
       <div className={homeStyle.homePage}>
         <main>
-          <span onClick={() => history.push('/home')}>
-            <img src="/home/img/logo.png" />
+          <span onClick={() => history.push('/')}>
+            <img src="./img/logo.png" />
           </span>
           <ul>
             {this.nav.map((n: string) => (
