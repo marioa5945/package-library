@@ -7,7 +7,7 @@ export default class PageHome extends React.PureComponent<_router> {
     super(props);
   }
 
-  private nav = navObj.packages.list.reverse();
+  private nav = [...navObj.packages.list.reverse(), 'blueprint-koa', 'apib-json', 'toml-json', 'tscn'];
 
   render(): React.ReactElement {
     const { history } = this.props;

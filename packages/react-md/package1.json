@@ -1,6 +1,6 @@
 {
   "name": "@marioa/react-md",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react markdown",
   "main": "./index.js",
   "repository": "git@github.com:marioa5945/package-library.git",
