@@ -10,9 +10,9 @@ import { write } from 'clipboardy';
 const getIp = () => {
   let ip = '';
   for (const name of Object.keys(interfaces)) {
-    const arr = (interfaces[name] as Array<{ [key: string]: any }>).filter((n) => n.family === 'IPv4' && !n.internal);
+    const arr = (interfaces[name] as unknown as Array<{ [key: string]: unknown }>).filter((n) => n.family === 'IPv4' && !n.internal);
     if (arr.length > 0) {
-      ip = arr[0].address;
+      ip = arr[0].address as string;
     }
   }
   return ip;
@@ -21,19 +21,24 @@ const getIp = () => {
 /**
  * Print and copy server url
  * @param port localhost port
- * @param path localhost path
+ * @param path ? localhost path
+ * @param copyType 'localhost' | 'ip' | 'none'
  */
-const serverPrint = async (port: string, path?: string): Promise<void> => {
+const serverPrint = async (info:{port: string, path?: string, copyType?: 'localhost' | 'ip' | 'none'}): Promise<void> => {
+  const {port, path, copyType} = info
   const error = (message: string) => chalk`{red ERROR:} ${message}`;
 
   const localAddress = `http://localhost:${port}${path ?? ''}`;
+  const ipAddress = `http://${getIp()}:${port}${path ?? ''}`;
   let message = chalk.green('Serving!');
   message += `\n\n${chalk.bold(`- Local:`)}            ${localAddress}`;
-  message += `\n${chalk.bold(`- On Your Network:`)}  http://${getIp()}:${port}${path ?? ''}`;
+  message += `\n${chalk.bold(`- On Your Network:`)} ${ipAddress}`;
 
   try {
-    await write(localAddress);
-    message += `\n\n${chalk.grey('Copied local address to clipboard!')}`;
+    if (copyType !== 'none'){
+      await write(copyType === 'localhost' ? localAddress : ipAddress);
+      message += `\n\n${chalk.grey(`Copied ${copyType === 'localhost' ? 'local' : 'ip'} address to clipboard!`)}`;
+    }
   } catch (err) {
     console.error(error(`Cannot copy to clipboard: ${err.message}`));
   }

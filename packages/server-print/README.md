@@ -13,8 +13,11 @@ $ yarn add server-print --dev
 ```ts
 import serverPrint from 'server-print';
 
-serverPrint('8080');
+serverPrint({port: '8080'});
 
 // add path
-serverPrint('8080', '/example');
+serverPrint({prot: '8080', path: '/example'});
+
+// Change copy's path
+serverPrint({port: '8080', copyType: 'ip'});
 ```
