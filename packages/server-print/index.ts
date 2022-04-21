@@ -7,16 +7,9 @@ import { write } from 'clipboardy';
 /**
  * Get localhost ip address
  */
-const getIp = () => {
-  let ip = '';
-  for (const name of Object.keys(interfaces)) {
-    const arr = (interfaces[name] as unknown as Array<{ [key: string]: unknown }>).filter((n) => n.family === 'IPv4' && !n.internal);
-    if (arr.length > 0) {
-      ip = arr[0].address as string;
-    }
-  }
-  return ip;
-};
+const interfaces = os.networkInterfaces();
+const ipObj = interfaces.en0;
+const getIp = ipObj ? ipObj[1].address : '';
 
 /**
  * Print and copy server url
