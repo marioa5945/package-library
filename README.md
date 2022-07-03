@@ -5,7 +5,7 @@ The library includes some packages and demos
 ## Installation
 
 ```
-$ yarn install
+$ yarn
 ```
 
 ## Use

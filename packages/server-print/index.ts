@@ -7,8 +7,7 @@ import { write } from 'clipboardy';
 /**
  * Get localhost ip address
  */
-const interfaces = os.networkInterfaces();
-const ipObj = interfaces.en0;
+const ipObj = interfaces.en1;
 const getIp = ipObj ? ipObj[1].address : '';
 
 /**
@@ -22,7 +21,7 @@ const serverPrint = async (info:{port: string, path?: string, copyType?: 'localh
   const error = (message: string) => chalk`{red ERROR:} ${message}`;
 
   const localAddress = `http://localhost:${port}${path ?? ''}`;
-  const ipAddress = `http://${getIp()}:${port}${path ?? ''}`;
+  const ipAddress = `http://${getIp}:${port}${path ?? ''}`;
   let message = chalk.green('Serving!');
   message += `\n\n${chalk.bold(`- Local:`)}            ${localAddress}`;
   message += `\n${chalk.bold(`- On Your Network:`)} ${ipAddress}`;
