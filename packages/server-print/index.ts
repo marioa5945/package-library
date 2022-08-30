@@ -23,7 +23,7 @@ const serverPrint = async (info:{port: string, path?: string, copyType?: 'localh
   const localAddress = `http://localhost:${port}${path ?? ''}`;
   const ipAddress = `http://${getIp}:${port}${path ?? ''}`;
   let message = chalk.green('Serving!');
-  message += `\n\n${chalk.bold(`- Local:`)}            ${localAddress}`;
+  message += `\n\n${chalk.bold(`- Local:`)}           ${localAddress}`;
   message += `\n${chalk.bold(`- On Your Network:`)} ${ipAddress}`;
 
   try {
@@ -32,7 +32,9 @@ const serverPrint = async (info:{port: string, path?: string, copyType?: 'localh
       message += `\n\n${chalk.grey(`Copied ${copyType === 'localhost' ? 'local' : 'ip'} address to clipboard!`)}`;
     }
   } catch (err) {
-    console.error(error(`Cannot copy to clipboard: ${err.message}`));
+    console.error(error(`Cannot copy to clipboard: ${(err as {
+      message: string;
+    }).message}`));
   }
   console.log(
     boxen(message, {
