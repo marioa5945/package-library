@@ -7,7 +7,7 @@ import { write } from 'clipboardy';
 /**
  * Get localhost ip address
  */
-const ipObj = interfaces.en1;
+const ipObj = interfaces.en1 ?? interfaces.en2;
 const getIp = ipObj ? ipObj[1].address : '';
 
 /**
