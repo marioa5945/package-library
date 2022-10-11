@@ -29,7 +29,7 @@ const buildCmdArr = [
 ];
 
 const publishCmdGet = (name: string) => {
-  return `cd ./dist/${name.slice(name.indexOf('\'') + 1, name.lastIndexOf('\''))}/ && yarn publish --access public`;
+  return `cd ./dist/${name.slice(name.indexOf('\'') + 1, name.lastIndexOf('\''))}/ && npm publish --access public`;
 };
 
 let buildIndex = 0;
